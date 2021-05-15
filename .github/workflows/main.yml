@@ -56,12 +56,14 @@ jobs:
           
       - name: Upload Screenshots
         uses: actions/upload-artifact@v2
+        if: always()
         with:
           name: Screenshots
           path: "screenshots"
           
       - name: Upload Allure Report
         uses: actions/upload-artifact@v2
+        if: always()
         with:
           name: report
           path: "allure/allure-report"
