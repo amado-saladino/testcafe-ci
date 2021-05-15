@@ -50,6 +50,7 @@ jobs:
           npm test
           
       - name: Generate the Test Report
+        if: success() || failure()
         run: |
           allure generate allure/allure-results --clean -o allure/allure-report
           
@@ -63,4 +64,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: report
-          path: "allure/allure-report"    
+          path: "allure/allure-report"
+          
