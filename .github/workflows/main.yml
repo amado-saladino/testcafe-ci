@@ -49,11 +49,6 @@ jobs:
         run: |
           npm test
           
-      - name: Generate the Test Report
-        if: success() || failure()
-        run: |
-          allure generate allure/allure-results --clean -o allure/allure-report
-          
       - name: Upload Screenshots
         uses: actions/upload-artifact@v2
         if: always()
