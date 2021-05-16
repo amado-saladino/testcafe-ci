@@ -49,10 +49,10 @@ test("Place Order E2E Tests", async (t) => {
     .click(cartpage.termsLabel)
     .click(cartpage.checkoutBtn)
     .expect(getURL()).contains('checkout');
-    await checkoutpage.selectCountry('US');
+    await checkoutpage.selectCountry('Germany');
     await t
         .takeScreenshot()
-        .typeText(checkoutpage.cityTxt,'Seattle')
+        .typeText(checkoutpage.cityTxt,'Berlin')
         .typeText(checkoutpage.addressTxt,'street 9')
         .typeText(checkoutpage.zipTxt,'123456')
         .typeText(checkoutpage.phoneTxt,'332434345')

@@ -2,10 +2,6 @@
     "browsers": "chrome:headless",
     "src": "tests",
     "reporter": "allure",
-    "videoPath": "videos",
-    "videoOptions": {
-        "failedOnly": true
-    },
     "screenshots": {
         "path": "screenshots",
         "takeOnFails": true,
