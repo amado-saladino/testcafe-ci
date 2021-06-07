@@ -71,7 +71,7 @@ jobs:
       - name: Push Docker Image to GitHub packaging
         uses: mr-smithers-excellent/docker-build-push@v5
         env:
-          VERSION=$(date +%s)
+          VERSION: $(date +%s)
         with:
           image: ghcr.io/${{ github.actor }}/testcafe-ci
           tags: latest, ${VERSION}
