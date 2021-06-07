@@ -67,4 +67,15 @@ jobs:
         with:
           name: report
           path: "allure/allure-report"
+
+      - name: Push Docker Image to GitHub packaging
+        uses: mr-smithers-excellent/docker-build-push@v5
+        env:
+          VERSION=$(date +%s)
+        with:
+          image: ghcr.io/${{ github.actor }}/testcafe-ci
+          tags: latest, ${VERSION}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }} 
           
